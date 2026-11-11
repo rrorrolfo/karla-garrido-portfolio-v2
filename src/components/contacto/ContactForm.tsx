@@ -12,7 +12,8 @@ import {
 import styles from "./Contacto.module.css";
 
 const CONTACT_URL =
-  process.env.NEXT_PUBLIC_CONTACT_URL ?? "https://ctm-mailer.onrender.com";
+  process.env.NEXT_PUBLIC_CONTACT_URL ??
+  "https://ctm-mailer.onrender.com/contact";
 
 type Status = "idle" | "sending" | "success" | "error";
 
