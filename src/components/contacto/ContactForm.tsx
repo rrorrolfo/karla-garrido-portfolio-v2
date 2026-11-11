@@ -12,12 +12,22 @@ import {
 import styles from "./Contacto.module.css";
 
 const CONTACT_URL =
-  process.env.NEXT_PUBLIC_CONTACT_URL ?? "https://node-mailer-rcph.herokuapp.com/contact";
+  process.env.NEXT_PUBLIC_CONTACT_URL ?? "https://ctm-mailer.onrender.com";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-const emptyValues: ContactValues = { nombre: "", email: "", subject: "", message: "" };
-const noErrors: ContactErrors = { nombre: null, email: null, subject: null, message: null };
+const emptyValues: ContactValues = {
+  nombre: "",
+  email: "",
+  subject: "",
+  message: "",
+};
+const noErrors: ContactErrors = {
+  nombre: null,
+  email: null,
+  subject: null,
+  message: null,
+};
 
 // The mailer replies with the string "success", either as plain text or as a JSON string.
 async function isSuccessResponse(response: Response): Promise<boolean> {
@@ -36,11 +46,16 @@ export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
 
   // Validates as the user types, like the original onKeyUp handlers.
-  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const field = event.target.name as ContactField;
     const { value } = event.target;
     setValues((current) => ({ ...current, [field]: value }));
-    setErrors((current) => ({ ...current, [field]: validateField(field, value) }));
+    setErrors((current) => ({
+      ...current,
+      [field]: validateField(field, value),
+    }));
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -91,7 +106,11 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <input type="email" placeholder="Correo Electronico" {...fieldProps("email")} />
+        <input
+          type="email"
+          placeholder="Correo Electronico"
+          {...fieldProps("email")}
+        />
         {errorMessage("email")}
       </div>
 
@@ -105,21 +124,30 @@ export default function ContactForm() {
         {errorMessage("message")}
       </div>
 
-      <button type="submit" className={styles.submit} disabled={status === "sending"}>
+      <button
+        type="submit"
+        className={styles.submit}
+        disabled={status === "sending"}
+      >
         {status === "sending" ? "Enviando..." : "Enviar"}
       </button>
 
       {status === "success" && (
         <div className={styles.successMessage}>
           <h3>¡Tu mensaje ha sido enviado!</h3>
-          <p>Gracias por contactarme, me pondre en contacto contigo lo más pronto posible.</p>
+          <p>
+            Gracias por contactarme, me pondre en contacto contigo lo más pronto
+            posible.
+          </p>
         </div>
       )}
 
       {status === "error" && (
         <div className={styles.errorMessage} role="alert">
           <h3>No se pudo enviar tu mensaje.</h3>
-          <p>Inténtalo de nuevo más tarde o escríbeme a karlagarrido@live.com.</p>
+          <p>
+            Inténtalo de nuevo más tarde o escríbeme a karlagarrido@live.com.
+          </p>
         </div>
       )}
     </form>
