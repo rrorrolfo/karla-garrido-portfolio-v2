@@ -1,0 +1,39 @@
+/*********** Base *****************/
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-raleway), sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:visited {
+  color: initial;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/*********** Shared utilities *****************/
+
+.is_hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sticky_footer {
+    min-height: calc(100vh - 155px);
+  }
+}

@@ -1,0 +1,50 @@
+.jumbotron {
+  height: 90vh;
+  position: fixed;
+}
+
+.jumbotron img {
+  width: 100%;
+  height: 90vh;
+  top: 10%;
+}
+
+.presentationText {
+  width: 90%;
+  font-size: 5rem;
+  position: absolute;
+  top: 40%;
+  left: 2.55%;
+  z-index: 1;
+}
+
+.presentationText p {
+  margin: 10px 0;
+  width: 70%;
+  font-weight: 900;
+}
+
+.presentationText p:last-child {
+  font-size: 3rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .presentationText {
+    top: 55%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .presentationText {
+    margin-left: 5%;
+  }
+
+  .presentationText p {
+    font-size: 6rem;
+  }
+
+  .presentationText p:last-child {
+    font-size: 3.5rem;
+  }
+}

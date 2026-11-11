@@ -1,0 +1,118 @@
+.imgWrapper {
+  width: 200px;
+  margin: 50px auto 0;
+}
+
+.contactImg {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+/*********** Contact Form *****************/
+
+.form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  padding-left: 5px;
+}
+
+.form input {
+  height: 40px;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  font-size: 1rem;
+}
+
+.submit {
+  height: 50px;
+  width: 125px;
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #fff;
+  border: 2px solid rgb(133, 133, 133);
+  color: rgb(133, 133, 133);
+  letter-spacing: 2px;
+}
+
+.validationError {
+  color: #ec5249;
+  margin: 0 0 10px;
+  padding-left: 15px;
+  font-size: 0.9rem;
+}
+
+.form .invalid {
+  background-color: #ec5249;
+  border: none;
+  color: #fff;
+}
+
+.form .invalid::placeholder {
+  color: #fff;
+}
+
+/*********** Messages after submitting *****************/
+
+.successMessage,
+.errorMessage {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.successMessage {
+  border: 2px solid rgb(29, 167, 1);
+}
+
+.successMessage h3 {
+  color: rgb(29, 167, 1);
+}
+
+.errorMessage {
+  border: 2px solid #ec5249;
+}
+
+.errorMessage h3 {
+  color: #ec5249;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+  }
+
+  .form {
+    flex-basis: 45%;
+    margin-right: 0;
+  }
+
+  .imgWrapper {
+    flex-basis: 20%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form {
+    flex-basis: 40%;
+    padding-top: 70px;
+  }
+
+  .imgWrapper {
+    padding-top: 90px;
+  }
+}

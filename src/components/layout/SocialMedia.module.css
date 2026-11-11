@@ -1,0 +1,37 @@
+.container {
+  position: fixed;
+  top: 50%;
+  display: none;
+}
+
+.container a {
+  display: block;
+  padding: 10px;
+}
+
+.icon {
+  height: 30px;
+}
+
+.icon path {
+  fill: #fff;
+}
+
+.facebook {
+  background-color: #385998;
+}
+
+.mail {
+  background-color: #d14836;
+}
+
+.instagram {
+  background-image: url(../../assets/img/insta_back.jpg);
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: initial;
+  }
+}

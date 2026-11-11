@@ -1,0 +1,100 @@
+/*********** Profile *****************/
+
+.profile {
+  text-align: center;
+}
+
+.actress,
+.year {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.characteristics {
+  font-size: 1rem;
+}
+
+.characteristics li {
+  margin: 5px 0;
+}
+
+.pass:last-child {
+  margin-top: 20px;
+}
+
+/*********** Gallery *****************/
+
+.year {
+  margin-bottom: 25px;
+}
+
+.photoWrapper {
+  margin-bottom: 20px;
+}
+
+.photoWrapper,
+.photoWrapper img {
+  width: 100%;
+}
+
+.photoWrapper img {
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .actress,
+  .year {
+    font-size: 1.5rem;
+  }
+
+  .galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .galleryContainer p {
+    flex-basis: 100%;
+  }
+
+  .photoWrapper {
+    flex-basis: 45%;
+  }
+
+  .profile {
+    margin-top: 53px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .actress,
+  .year {
+    font-size: 1.75rem;
+  }
+
+  .year {
+    padding-top: 50px;
+    margin: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .profile {
+    flex-basis: 22.5%;
+    order: 2;
+    margin-top: 30px;
+  }
+
+  .galleryContainer {
+    flex-basis: 72.5%;
+    order: 1;
+  }
+
+  .photoWrapper {
+    flex-basis: 22%;
+  }
+}
